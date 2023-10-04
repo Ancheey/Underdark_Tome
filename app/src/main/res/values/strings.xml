@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">The Underdark Tome</string>
+    <string-array name="dnd_races">
+        <item>Human</item>
+        <item>Elf</item>
+        <item>Dwarf</item>
+        <item>Drow</item>
+        <item>Half-Elf</item>
+        <item>Helf-Orc</item>
+        <item>Gnome</item>
+        <item>Halfling</item>
+        <item>Tiefling</item>
+        <item>Dragonkin</item>
+        <item>Aasimar</item>
+    </string-array>
+    <string-array name="dnd_classes">
+        <item>None</item>
+        <item>Fighter</item>
+        <item>Paladin</item>
+        <item>Cleric</item>
+        <item>Ranger</item>
+        <item>Barbarian</item>
+        <item>Rogue</item>
+        <item>Bard</item>
+        <item>Druid</item>
+        <item>Mage</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+    </string-array>
+    <string-array name="dnd_weapons">
+        <item>Finesse</item>
+        <item>Blunt</item>
+        <item>Martial</item>
+    </string-array>
+</resources>

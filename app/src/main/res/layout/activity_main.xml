@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TextView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<ScrollView android:layout_height="match_parent"
+     android:layout_width="match_parent">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Podpisany textbox "Character Name" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Character Name"/>
+
+        <EditText
+            android:id="@+id/characterNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter character name"/>
+
+        <!-- Combo Box z wyborem ras z DnD 5e -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/characterRace"
+            android:text="Race"/>
+
+        <Spinner
+            android:id="@+id/raceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/dnd_races"/>
+
+        <!-- Combo boxy i inputy na klasy postaci i ich levele -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="Classes and Levels"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Combo box na klasę 1 -->
+            <TableRow>
+            <Spinner
+                android:id="@+id/class1Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/dnd_classes"/>
+
+            <!-- Input na poziom klasy 1 -->
+            <EditText
+                android:id="@+id/level1EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:hint="Level" />
+            </TableRow>
+
+            <!-- Combo box na klasę 2 -->
+            <TableRow>
+            <Spinner
+                android:id="@+id/class2Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/dnd_classes"/>
+
+            <!-- Input na poziom klasy 2 -->
+            <EditText
+                android:id="@+id/level2EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:hint="Level"/>
+            </TableRow>
+
+            <!-- Combo box na klasę 3 -->
+            <TableRow>
+            <Spinner
+                android:id="@+id/class3Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/dnd_classes"/>
+
+            <!-- Input na poziom klasy 3 -->
+            <EditText
+                android:id="@+id/level3EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:hint="Level"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Tabelka ze statystykami głównymi z DnD 5e -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Main Statistics"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <!-- Nagłówki tabelki -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stat"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Value"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modifier"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <!-- Statystyki -->
+            <TableRow>
+                <Button
+                    android:id="@+id/strengthRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strength"/>
+
+                <EditText
+                    android:id="@+id/strengthValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/strengthModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/dexterityRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dexterity"/>
+
+                <EditText
+                    android:id="@+id/dexterityValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/dexterityModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/constitutionRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Constitution"/>
+
+                <EditText
+                    android:id="@+id/constitutionValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/constitutionModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/intelligenceRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intelligence"/>
+
+                <EditText
+                    android:id="@+id/intelligenceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/intelligenceModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/wisdomRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wisdom"/>
+
+                <EditText
+                    android:id="@+id/wisdomValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/wisdomModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/charismaRoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Charisma"/>
+
+                <EditText
+                    android:id="@+id/charismaValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:minEms="1"
+                    android:maxEms="2"
+                    android:maxLength="2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/charismaModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <!-- Dodaj inne statystyki tutaj w taki sam sposób -->
+        </TableLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Nagłówek tabeli -->
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Weapon"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Type"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="dice"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sides"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="roll"
+                    android:gravity="center"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <!-- Rząd 1 -->
+            <TableRow>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Name"
+                    android:padding="8dp" />
+
+                <Spinner
+                    android:id="@+id/WP1T"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/dnd_weapons"/>
+                <EditText
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="dice"
+                    android:id="@+id/WP1D"
+                    android:inputType="number"
+                    android:text="1"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="sides"
+                    android:id="@+id/WP1S"
+                    android:inputType="number"
+                    android:text="4"
+                    android:padding="8dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roll"
+                    android:id="@+id/WP1B"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <!-- Rząd 2 -->
+            <TableRow>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Name"
+                    android:padding="8dp" />
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/WP2T"
+                    android:entries="@array/dnd_weapons"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="dice"
+                    android:id="@+id/WP2D"
+                    android:inputType="number"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="sides"
+                    android:id="@+id/WP2S"
+                    android:inputType="number"
+                    android:padding="8dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roll"
+                    android:id="@+id/WP2B"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <!-- Rząd 3 -->
+            <TableRow>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Name"
+                    android:padding="8dp" />
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/WP3T"
+                    android:entries="@array/dnd_weapons"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="dice"
+                    android:id="@+id/WP3D"
+                    android:inputType="number"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="sides"
+                    android:id="@+id/WP3S"
+                    android:inputType="number"
+                    android:padding="8dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roll"
+                    android:id="@+id/WP3B"
+                    android:padding="8dp" />
+            </TableRow>
+        </TableLayout>
+        <!-- Tutaj dodaj tabelkę lub inne elementy, które wykorzystasz do wyświetlania statystyk głównych DnD 5e -->
+    </LinearLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
