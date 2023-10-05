@@ -32,7 +32,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/characterRace"
             android:text="Race"/>
 
         <Spinner
@@ -352,6 +351,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Name"
+                    android:id="@+id/WP1N"
                     android:padding="8dp" />
 
                 <Spinner
@@ -396,6 +396,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Name"
+                    android:id="@+id/WP2N"
                     android:padding="8dp" />
                 <Spinner
                     android:layout_width="0dp"
@@ -437,6 +438,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Name"
+                    android:id="@+id/WP3N"
                     android:padding="8dp" />
                 <Spinner
                     android:layout_width="0dp"
